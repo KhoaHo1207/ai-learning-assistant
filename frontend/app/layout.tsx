@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Urbanist } from "next/font/google";
 import "./globals.css";
-
+import { Toaster } from "react-hot-toast";
 const getUrbanist = Urbanist({
   variable: "--font-urbanist",
   subsets: ["latin"],
@@ -20,7 +20,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${getUrbanist.variable} antialiased`}>{children}</body>
+      <body className={`${getUrbanist.variable} antialiased`}>
+        {children} <Toaster />{" "}
+      </body>
     </html>
   );
 }
